@@ -1,11 +1,13 @@
 #!/bin/bash
 #
-# Copyright (C) 2023 The OrangeFox Recovery Project
+# Copyright (C) 2026 The OrangeFox Recovery Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Add lunch choices for OrangeFox Recovery
-add_lunch_combo fox_CPH2487-user
-add_lunch_combo fox_CPH2487-userdebug
-add_lunch_combo fox_CPH2487-eng
+# This file is required for the build system to find your device.
+# Lunch combos are now defined in AndroidProducts.mk via COMMON_LUNCH_CHOICES.
+
+# Add a marker to indicate that the vendor setup is complete.
+# This helps the build system find the correct device directory.
+export FOX_BUILD_FOR_CPH2487=true
