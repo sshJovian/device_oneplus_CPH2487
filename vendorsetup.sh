@@ -9,5 +9,4 @@
 # Lunch combos are now defined in AndroidProducts.mk via COMMON_LUNCH_CHOICES.
 
 # Add a marker to indicate that the vendor setup is complete.
-# This helps the build system find the correct device directory.
 export FOX_BUILD_FOR_CPH2487=true
