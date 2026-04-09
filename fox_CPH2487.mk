@@ -1,25 +1,59 @@
-# OrangeFox Recovery for OnePlus 11R (udon / CPH2487)
+#
+# OrangeFox Recovery for OnePlus 11R (CPH2487)
+#
 
-$(call inherit-product, device/oneplus/sm8475-common/udon.mk)
+# Device path
+DEVICE_PATH := device/oneplus/CPH2487
 
-# Release
-PRODUCT_RELEASE_NAME := udon
-PRODUCT_DEVICE := udon
+# Product configuration
+PRODUCT_NAME := fox_CPH2487
+PRODUCT_DEVICE := CPH2487
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := CPH2487
+PRODUCT_MANUFACTURER := OnePlus
 
-# Inherit OrangeFox base
-$(call inherit-product-if-exists, vendor/recovery/orangefox.mk)
+# Product characteristics
+PRODUCT_CHARACTERISTICS := nosdcard
 
-# Basic flags
-TW_THEME := portrait_hdpi
-RECOVERY_SDCARD_ON_DATA := true
-TW_HAS_MTP := true
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_FBE_DECRYPT := true
-TW_INCLUDE_FBE_METADATA_DECRYPT := true
+# Inherit from device
+$(call inherit-product, $(DEVICE_PATH)/device.mk)
 
-# A/B + Android 16 flags
-OF_AB_DEVICE_WITH_RECOVERY_PARTITION := true
-OF_VIRTUAL_AB_DEVICE := true
+# Inherit from common
+$(call inherit-product, device/oneplus/sm8475-common/common.mk)
 
+# Inherit from vendor
+$(call inherit-product, vendor/oneplus/2487/CPH2487-vendor.mk)
+
+# OrangeFox specific
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/recovery.fstab:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/recovery.fstab
+
+# Recovery properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.crypto.scrypt_params=7:1024:1 \
+    ro.crypto.volume.filenames_mode=aes-256-cts \
+    ro.frp.pst=/dev/block/by-name/frp
+
+# OrangeFox flags
+TW_NO_LEGACY_OTA := true
+TW_INCLUDE_FB2PNG := true
+TW_INCLUDE_REPACKTOOLS := true
+TW_DEFAULT_LANGUAGE := en
+TW_MAX_BRIGHTNESS := 2047
+TW_DEFAULT_BRIGHTNESS := 1024
+TW_SCREEN_BLANK_ON_BOOT := true
+TW_EXCLUDE_SUPERSU := true
+TW_INCLUDE_NTFS_3G := true
+TW_INCLUDE_RESETPROP := true
+TW_INCLUDE_LIBRESETPROP := true
+TW_INCLUDE_LPDUMP := true
+TW_INCLUDE_LPTOOLS := true
+TW_CUSTOM_CPU_TUNE := 1
+TW_NO_SCREEN_TIMEOUT := true
+TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
+TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
+TW_EXTRA_LANGUAGES := true
+
+# Debug flags
+TWRP_EVENT_LOGGING := true
+TWRP_INCLUDE_LOGCAT := true
