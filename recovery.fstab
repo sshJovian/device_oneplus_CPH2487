@@ -1,14 +1,32 @@
-# OrangeFox recovery.fstab - OnePlus 11R (udon)
+# Android 16 fstab for OnePlus 11R (CPH2487)
+# <src>                                         <mnt_point>         <type>   <mnt_flags and options>                               <fs_mgr_flags>
+# UFS partitions
+/dev/block/by-name/system                       /system             ext4     ro,barrier=1                                          wait,slotselect,avb
+/dev/block/by-name/system_ext                   /system_ext         ext4     ro,barrier=1                                          wait,slotselect,avb
+/dev/block/by-name/product                      /product            ext4     ro,barrier=1                                          wait,slotselect,avb
+/dev/block/by-name/vendor                       /vendor             ext4     ro,barrier=1                                          wait,slotselect,avb
+/dev/block/by-name/odm                          /odm                ext4     ro,barrier=1                                          wait,slotselect,avb
+/dev/block/by-name/modem                        /firmware           vfat     ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0 wait,slotselect
+/dev/block/by-name/dsp                          /dsp                ext4     ro,nosuid,nodev,barrier=1                             wait
+/dev/block/by-name/bluetooth                    /vendor/bluetooth   ext4     ro,nosuid,nodev,barrier=1                             wait
 
-/system         ext4    ro,barrier=1     wait,logical,first_stage_mount
-/system_ext     ext4    ro               wait,logical,first_stage_mount
-/product        ext4    ro               wait,logical,first_stage_mount
-/vendor         ext4    ro               wait,logical,first_stage_mount
-/odm            ext4    ro               wait,logical,first_stage_mount
+# Data partition (F2FS/EXT4)
+/dev/block/by-name/userdata                     /data               f2fs     nosuid,nodev,noatime,inlinecrypt,reserve_root=32768,resgid=1065,fsync_mode=nobarrier,discard wait,check,formattable,fileencryption=aes-256-xts:aes-256-cts,quota,reservedsize=128M,sysfs_path=/sys/devices/platform/soc/1d84000.ufshc,latemount
 
-/vendor_dlkm    ext4    ro               wait,logical,first_stage_mount
-/odm_dlkm       ext4    ro               wait,logical,first_stage_mount
+# Cache partition
+/dev/block/by-name/cache                        /cache              ext4     nosuid,nodev,noatime                                 wait,check,formattable
 
-/data           f2fs    nosuid,nodev     wait,check,formattable,quota,latemount
+# Metadata partition
+/dev/block/by-name/metadata                     /metadata           ext4     nosuid,nodev,noatime,discard                         wait,formattable,first_stage_mount
 
-/metadata       ext4    nosuid,nodev     wait,formattableev
+# Misc partitions
+/dev/block/by-name/misc                         /misc               emmc     defaults                                              defaults
+/dev/block/by-name/boot                         /boot               emmc     defaults                                              defaults
+/dev/block/by-name/dtbo                         /dtbo               emmc     defaults                                              defaults
+/dev/block/by-name/vendor_boot                  /vendor_boot        emmc     defaults                                              defaults
+
+# Recovery
+/dev/block/by-name/recovery                     /recovery           emmc     defaults                                              defaults
+
+# USB OTG
+usbdisk                                         /usb_otg            vfat     defaults                                              defaults
