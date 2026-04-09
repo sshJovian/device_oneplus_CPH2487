@@ -17,3 +17,6 @@ PRODUCT_PACKAGES += \
     fastbootd \
     linker.vendor_ramdisk \
     android.hardware.boot@1.2-impl.recovery
+
+TARGET_PREBUILT_KERNEL := device/oneplus/CPH2487-prebuilt/kernel
+BOARD_PREBUILT_DTBOIMAGE := device/oneplus/CPH2487-prebuilt/dtbo.img
