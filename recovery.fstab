@@ -1,14 +1,9 @@
-# recovery.fstab for OnePlus 11R (udon)
+# OrangeFox recovery.fstab - OnePlus 11R (udon)
 
-# System & Vendor (A/B)
- /dev/block/bootdevice/by-name/system       /system         ext4    ro,barrier=1
- /dev/block/bootdevice/by-name/vendor       /vendor         ext4    ro,barrier=1
- /dev/block/bootdevice/by-name/product      /product        ext4    ro,barrier=1
-
-# Data
- /dev/block/bootdevice/by-name/data         /data           f2fs    rw,nosuid,nodev,noatime,inlinecrypt
- /dev/block/bootdevice/by-name/metadata     /metadata       ext4    rw,nosuid,nodev
-
-# Misc
- /dev/block/bootdevice/by-name/misc         /misc           emmc    defaults
- /dev/block/bootdevice/by-name/persist      /persist        ext4    rw,nosuid,nodev
+ /dev/block/bootdevice/by-name/system       /system         ext4        ro,barrier=1
+ /dev/block/bootdevice/by-name/vendor       /vendor         ext4        ro,barrier=1
+ /dev/block/bootdevice/by-name/product      /product        ext4        ro,barrier=1
+ /dev/block/bootdevice/by-name/data         /data           f2fs        rw,nosuid,nodev,noatime,inlinecrypt
+ /dev/block/bootdevice/by-name/metadata     /metadata       ext4        rw,nosuid,nodev
+ /dev/block/bootdevice/by-name/misc         /misc           emmc        defaults
+ /dev/block/bootdevice/by-name/persist      /persist        ext4        rw,nosuid,nodev
