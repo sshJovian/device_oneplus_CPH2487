@@ -1,0 +1,25 @@
+# OrangeFox recovery.fstab for OnePlus 11R (udon / CPH2487)
+
+# A/B partitions
+/dev/block/by-name/system_a         /system         ext4        ro,barrier=1
+/dev/block/by-name/system_b         /system         ext4        ro,barrier=1
+/dev/block/by-name/vendor_a         /vendor         ext4        ro,barrier=1
+/dev/block/by-name/vendor_b         /vendor         ext4        ro,barrier=1
+/dev/block/by-name/product_a        /product        ext4        ro,barrier=1
+/dev/block/by-name/product_b        /product        ext4        ro,barrier=1
+/dev/block/by-name/odm_a            /odm            ext4        ro,barrier=1
+/dev/block/by-name/odm_b            /odm            ext4        ro,barrier=1
+
+# Data & metadata
+/dev/block/by-name/data             /data           f2fs        rw,nosuid,nodev,noatime,inlinecrypt
+/dev/block/by-name/metadata         /metadata       ext4        rw,nosuid,nodev
+/dev/block/by-name/cache            /cache          ext4        rw,nosuid,nodev
+
+# Misc
+/dev/block/by-name/misc             /misc           emmc        defaults
+/dev/block/by-name/persist          /persist        ext4        rw,nosuid,nodev
+/dev/block/by-name/boot             /boot           emmc        defaults
+/dev/block/by-name/recovery         /recovery       emmc        defaults
+
+# For decryption support
+/dev/block/by-name/userdata         /data           f2fs        rw,nosuid,nodev,noatime,inlinecrypt
