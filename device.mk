@@ -27,8 +27,5 @@ PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 TARGET_SCREEN_HEIGHT := 2772
 TARGET_SCREEN_WIDTH := 1240
 
-# Include OrangeFox vendor
-$(call inherit-product, vendor/fox/product/fox.mk)
-
 # OrangeFox version
 FOX_VERSION := R12.1_udon
