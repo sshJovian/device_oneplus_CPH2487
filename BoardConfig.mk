@@ -45,12 +45,12 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno730
 TARGET_USES_QCOM_BSP := true
 QCOM_BOARD_PLATFORMS := taro
 
-# Partitions
+# Partitions - Traditional Recovery (not vendor_boot)
 BOARD_FLASH_BLOCK_SIZE := 262144
 BOARD_BOOTIMAGE_PARTITION_SIZE := 201326592
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 201326592
 
-# Dynamic partitions - TRADITIONAL RECOVERY (NOT vendor_boot)
+# Dynamic partitions - NOT used for traditional recovery
 BOARD_USES_METADATA_PARTITION := true
 BOARD_ROOT_EXTRA_FOLDERS := metadata
 BOARD_USES_RECOVERY_AS_BOOT := false
