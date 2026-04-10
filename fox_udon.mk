@@ -1,11 +1,11 @@
-# OrangeFox Recovery for OnePlus 11R (udon / CPH2487)
+# OrangeFox Recovery for OnePlus 11R (udon / udon)
 
 $(call inherit-product, device/oneplus/sm8475-common/common.mk)
 
-PRODUCT_NAME := fox_CPH2487
+PRODUCT_NAME := fox_udon
 PRODUCT_DEVICE := udon
 PRODUCT_BRAND := OnePlus
-PRODUCT_MODEL := CPH2487
+PRODUCT_MODEL := udon
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_RELEASE_NAME := udon
 
