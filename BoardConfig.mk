@@ -117,11 +117,11 @@ TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
 
-# Partitions (Android 16)
+# Partitions (Android 16) - for recovery
 TARGET_COPY_OUT_VENDOR := vendor
-TARGET_COPY_OUT_PRODUCT := product
-TARGET_COPY_OUT_SYSTEM_EXT := system_ext
-TARGET_COPY_OUT_ODM := odm
+# TARGET_COPY_OUT_PRODUCT := product
+# TARGET_COPY_OUT_SYSTEM_EXT := system_ext
+# TARGET_COPY_OUT_ODM := odm
 
 # AVB
 BOARD_AVB_ENABLE := true
