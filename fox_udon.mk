@@ -3,6 +3,7 @@
 #
 
 $(call inherit-product, device/oneplus/sm8475-common/common.mk)
+$(call inherit-product, vendor/oneplus/udon/udon-vendor.mk)
 
 PRODUCT_NAME := fox_udon
 PRODUCT_DEVICE := udon
