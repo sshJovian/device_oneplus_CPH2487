@@ -1,4 +1,4 @@
-# Android 16 fstab for OnePlus 11R (CPH2487)
+# Android 16 fstab for OnePlus 11R (udon)
 # <src>                                         <mnt_point>         <type>   <mnt_flags and options>                               <fs_mgr_flags>
 # UFS partitions
 /dev/block/by-name/system                       /system             ext4     ro,barrier=1                                          wait,slotselect,avb
