@@ -2,7 +2,7 @@
 
 $(call inherit-product, device/oneplus/sm8475-common/common.mk)
 
-# === Required Product Definitions ===
+# Required Product Definitions
 PRODUCT_NAME := fox_udon
 PRODUCT_DEVICE := udon
 PRODUCT_BRAND := OnePlus
