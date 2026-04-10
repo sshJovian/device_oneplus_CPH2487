@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/oneplus/CPH2487
+DEVICE_PATH := device/oneplus/udon
 
 # Architecture
 TARGET_ARCH := arm64
@@ -76,7 +76,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
 
 # OrangeFox
-FOX_VERSION := R12.1_CPH2487
+FOX_VERSION := R12.1_udon
 FOX_BUILD_TYPE := Unofficial
 FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER := true
 FOX_VARIANT := alpha
