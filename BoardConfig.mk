@@ -156,4 +156,5 @@ SELINUX_IGNORE_NEVERALLOWS := true
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Inherit from common board
+TARGET_SUPPORTS_64_BIT_APPS := true
 include device/oneplus/sm8475-common/BoardConfigCommon.mk
