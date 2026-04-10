@@ -6,8 +6,3 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/fox_CPH2487.mk
-
-COMMON_LUNCH_CHOICES := \
-    fox_CPH2487-user \
-    fox_CPH2487-userdebug \
-    fox_CPH2487-eng
