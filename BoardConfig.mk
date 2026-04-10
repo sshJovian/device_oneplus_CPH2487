@@ -45,16 +45,12 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno730
 TARGET_USES_QCOM_BSP := true
 QCOM_BOARD_PLATFORMS := taro
 
-# Partitions
+# Partitions - Traditional Recovery (not vendor_boot)
 BOARD_FLASH_BLOCK_SIZE := 262144
 BOARD_BOOTIMAGE_PARTITION_SIZE := 201326592
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 201326592
-BOARD_SUPER_PARTITION_SIZE := 15032385536
-BOARD_SUPER_PARTITION_GROUPS := oneplus_dynamic_partitions
-BOARD_ONEOPLUS_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext vendor product odm
-BOARD_ONEOPLUS_DYNAMIC_PARTITIONS_SIZE := 15032385536
 
-# Dynamic partitions - TRADITIONAL RECOVERY (NOT vendor_boot)
+# Dynamic partitions - NOT used for traditional recovery
 BOARD_USES_METADATA_PARTITION := true
 BOARD_ROOT_EXTRA_FOLDERS := metadata
 BOARD_USES_RECOVERY_AS_BOOT := false
@@ -98,7 +94,6 @@ FOX_PATCH_VBMETA_FLAGS := 3
 FOX_RECOVERY_SYSTEM_PARTITION := false
 FOX_RECOVERY_INSTALL_PARTITION := /dev/block/by-name/recovery
 FOX_RECOVERY_BOOTABLE_PARTITION := /dev/block/by-name/recovery
-# Remove FOX_RECOVERY_VENDOR_BOOT line or comment it out
 # FOX_RECOVERY_VENDOR_BOOT := /dev/block/by-name/vendor_boot
 
 # Encryption
@@ -117,11 +112,11 @@ TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
 
-# Partitions (Android 16)
+# Partitions (Android 16) - Only vendor is needed for recovery
 TARGET_COPY_OUT_VENDOR := vendor
-TARGET_COPY_OUT_PRODUCT := product
-TARGET_COPY_OUT_SYSTEM_EXT := system_ext
-TARGET_COPY_OUT_ODM := odm
+# TARGET_COPY_OUT_PRODUCT := product
+# TARGET_COPY_OUT_SYSTEM_EXT := system_ext
+# TARGET_COPY_OUT_ODM := odm
 
 # AVB
 BOARD_AVB_ENABLE := true
