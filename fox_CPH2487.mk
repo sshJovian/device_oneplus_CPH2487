@@ -1,16 +1,14 @@
-# OrangeFox Recovery Device Configuration for OnePlus 11R (udon / CPH2487)
+# OrangeFox for OnePlus 11R (CPH2487) - main branch
 
-# Inherit from common tree
 $(call inherit-product, device/oneplus/sm8475-common/udon.mk)
 
-# Device identifiers
 PRODUCT_RELEASE_NAME := udon
 PRODUCT_DEVICE := udon
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := CPH2487
 PRODUCT_MANUFACTURER := OnePlus
 
-# Inherit OrangeFox recovery
+# Inherit OrangeFox
 $(call inherit-product-if-exists, vendor/recovery/orangefox.mk)
 
 # Recovery flags
@@ -24,7 +22,8 @@ TW_USE_TOOLBOX := true
 TW_EXCLUDE_APEX := true
 TW_INCLUDE_REPACKTOOLS := true
 
-# A/B + 64-bit fixes
+# Important for 64-bit + A/B
+TARGET_SUPPORTS_64_BIT_APPS := true
 OF_AB_DEVICE_WITH_RECOVERY_PARTITION := true
 OF_VIRTUAL_AB_DEVICE := true
-TARGET_SUPPORTS_64_BIT_APPS := true   # This fixes the 32-bit error
+OF_FIX_DECRYPTION_ON_DATA_MEDIA := true
