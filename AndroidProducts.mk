@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/fox_CPH2487.mk
+    $(LOCAL_DIR)/fox_udon.mk
