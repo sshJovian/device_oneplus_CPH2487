@@ -2,7 +2,7 @@
 
 $(call inherit-product, device/oneplus/sm8475-common/common.mk)
 
-PRODUCT_NAME := fox_udon
+PRODUCT_NAME := fox_CPH2487
 PRODUCT_DEVICE := udon
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := CPH2487
