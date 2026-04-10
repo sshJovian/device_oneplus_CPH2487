@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project path="device/oneplus/sm8475-common" 
-           name="sshJovian/device_oneplus_sm8475-common" 
-           remote="github" 
-           revision="main" />
-
-  <project path="vendor/oneplus/2487" 
-           name="sshJovian/vendor_oneplus_2487" 
-           remote="github" 
-           revision="main" />
-
-  <project path="device/oneplus/CPH2487-prebuilt" 
-           name="sshJovian/device_oneplus_CPH2487-prebuilt" 
-           remote="github" 
-           revision="main" />
+  <project path="device/oneplus/sm8475-common" name="sshJovian/device_oneplus_sm8475-common" remote="github" revision="main" />
+  <project path="vendor/oneplus/2487" name="sshJovian/vendor_oneplus_2487" remote="github" revision="main" />
+  <project path="device/oneplus/CPH2487-prebuilt" name="sshJovian/device_oneplus_CPH2487-prebuilt" remote="github" revision="main" />
 </manifest>
